@@ -1,48 +1,29 @@
-# Conversor de moedas
+# Currency converter
 
-Você deverá implementar uma API Rest que seja capaz de realizar a conversão entre duas moedas
-utilizando taxas de conversões atualizadas de um serviço externo.
+It implements a REST API that it's able to make conversions between two currencies
+by using conversion fees requested from an external service.
 
-Para realização da conversão é necessário o ID do usuário que deseja realizar a conversão.
+To be able to make a conversion, an user ID is needed.
 
-A API deverá registrar cada transação de conversão com todas as informações relacionadas e também
-disponibilizar um endpoint para consulta das transações realizadas por um usuário.
+The API should register each conversion transaction including all the related information
+and offer an endpoint where transactions made by an user can be searched.
 
-1. Deve ser possível realizar a conversão entre 4 moedas no mínimo (BRL, USD, EUR, JPY);
-1. As taxas de conversão devem ser obtidas de [https://api.exchangeratesapi.io/latest?base=EUR];
-1. As transações de conversão devem ser persistidas no banco de dados (embedded) contendo:
-    * ID do usuário;
-    * Moeda origem;
-    * Valor origem;
-    * Moeda destino;
-    * Taxa de conversão utilizada;
-    * Data/Hora UTC;
-1. Uma transação com sucesso deve retornar:
-    * ID da transação
-    * ID do usuário;
-    * Moeda origem;
-    * Valor origem;
-    * Moeda destino;
-    * Valor destino;
-    * Taxa de conversão utilizada;
-    * Data/Hora UTC;
-1. Os casos de falha devem retornar com status code pertinente e descrição no corpo;
-1. Deverá existir um endpoint para listagem de todas as transações realizadas por usuário;
-1. Deve haver uma cobertura satisfatória de testes;
-1. Deve-se adicionar a esse arquivo explicações sobre como rodar a aplicação, e uma apresentação sobre o
-projeto: propósito, features, motivação das principais escolhas de tecnologias, e separação das camadas;
-1. Todo o código deve ser em inglês;
-1. Disponibilizar o código apenas nesse repositório, sem nenhuma cópia pública, para evitar plágio;
-
-## Itens desejáveis
-* Logs
-* Tratamento de exceções
-* Documentação
-* Coesão de commits
-* Mensagens de commits claras
-* Configuração de lint
-* Testes unitários
-* Testes de integração
-* Documentação dos endpoints
-* Estar rodando e disponível (Ex: Heroku, ou similar)
-* CI/CD
+1. It should be able to make conversions between 4 currencies, at least (BRL, USD, EUR, JPY);
+1. Conversions' fees must be obtained from [https://api.exchangeratesapi.io/latest?base=EUR];
+1. Conversions transactions must be recorded in a embedded database, including:
+    * User ID;
+    * Currency from;
+    * Value from;
+    * Currency to;
+    * Conversion fee;
+    * Date/time UTC;
+1. A successful transaction must return:
+    * Transaction ID;
+    * User ID;
+    * Currency from;
+    * Value from;
+    * Currency to;
+    * Conversion fee;
+    * Date/time UTC;
+    * Value to;    
+ 
